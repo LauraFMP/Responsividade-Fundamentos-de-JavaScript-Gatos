@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Painel interativo de usuários da comunidade MiAU.exe." />
+    <title>MiAU.exe | Painel de Usuários</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="top-header">
+        <a class="logo" href="#inicio">MiAU<span>.exe</span></a>
+        <p class="tagline">painel da comunidade felina</p>
+      </header>
+
+      <nav class="main-menu" aria-label="Menu principal">
+        <a href="#cadastro">Cadastrar</a>
+        <a href="#usuarios">Usuários</a>
+        <a href="#dicas">Dicas</a>
+      </nav>
+
+      <main id="inicio">
+        <section class="hero">
+          <div>
+            <p class="eyebrow">&gt; aula_03 / javascript</p>
+            <h1>Painel dos humanos aprovados pelos gatos.</h1>
+            <p>Cadastre membros da comunidade, pesquise a tripulação e mantenha a lista em ordem — tudo sem acordar o gato.</p>
+          </div>
+          <button class="mascot" id="mascot" type="button" aria-label="Gatinho pixelado; passe o mouse para uma mensagem">
+            <span class="cat-ears"></span><span class="cat-face"><i></i><i></i><b></b></span><span class="cat-body"></span>
+          </button>
+        </section>
+
+        <section id="cadastro" class="section-block">
+          <div class="section-heading"><div><p class="eyebrow">novo membro</p><h2>Cadastro de humano</h2></div><p id="status-message" class="status" aria-live="polite">Sistema pronto para receber carinho.</p></div>
+          <form id="user-form" class="register-form">
+            <label>Nome<input id="name" name="name" type="text" placeholder="Ex.: Laura" required minlength="2" /></label>
+            <label>Idade<input id="age" name="age" type="number" placeholder="Ex.: 20" required min="0" max="120" /></label>
+            <label>E-mail<input id="email" name="email" type="email" placeholder="voce@email.com" required /></label>
+            <button class="pixel-button" type="submit">cadastrar +</button>
+          </form>
+          <p id="age-result" class="age-result" aria-live="polite"></p>
+        </section>
+
+        <section id="usuarios" class="section-block users-section">
+          <div class="section-heading"><div><p class="eyebrow">banco de bigodes</p><h2>Usuários cadastrados</h2></div><span id="user-count" class="counter">0 usuários</span></div>
+          <div class="controls">
+            <label class="search-label">Buscar membro<input id="search" type="search" placeholder="Digite um nome..." /></label>
+            <div class="button-group"><button id="sort-button" class="pixel-button blue-button" type="button">ordenar A-Z</button><button id="remove-button" class="pixel-button dark-button" type="button">remover último</button></div>
+          </div>
+          <div id="user-list" class="user-list" aria-live="polite"></div>
+        </section>
+
+        <aside id="dicas" class="tip-box"><p class="eyebrow">atalho do gato</p><h2>Experimente os eventos!</h2><p>Envie o formulário, clique nos controles e passe o mouse sobre o gatinho. Cada ação atualiza o painel usando JavaScript e DOM.</p></aside>
+      </main>
+      <footer>© 2026 Laura — MiAU.exe, feito com JavaScript, pixels e muitos miaus.</footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
